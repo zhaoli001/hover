@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hover</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			-webkit-box-sizing:border-box;
+		}
+		.big{
+			width:650px;
+			height:150px;
+			margin:100px auto;
+		}
+		.big .box{
+			width:150px;
+			height:150px;
+			margin-right:10px;
+			float:left;
+			position:relative;
+			cursor: pointer;
+		}
+		.big .box img{
+			width:100%;
+			height:100%;
+			position: absolute;
+			top:0;
+			left:0;
+		}
+		.mask{
+			width:100%;
+			height:0px;
+			overflow: hidden;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background:lightgreen;
+			font-size:14px;
+			color:#fff;
+			line-height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="big">
+		<div class="box">
+			<img src="img/1.jpg" alt="">
+			<div class="mask">突然好想你，你会在哪里，突然模糊了眼睛</div>
+		</div>
+		<div class="box">
+			<img src="img/2.jpg" alt="">
+			<div class="mask">突然好想你，你会在哪里，突然模糊了眼睛</div>
+		</div>
+		<div class="box">
+			<img src="img/3.jpg" alt="">
+			<div class="mask">突然好想你，你会在哪里，突然模糊了眼睛</div>
+		</div>
+		<div class="box">
+			<img src="img/4.jpeg" alt="">
+			<div class="mask">突然好想你，你会在哪里，突然模糊了眼睛</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src='js/jquery.min.js'></script>
+<script>
+	$(".box").hover(function(){
+		$(this).find(".mask").stop().animate({"height":"150px"},1000);
+	},function(){
+		$(this).find(".mask").stop().animate({"height":"0px"},1000);
+	})
+
+</script>
